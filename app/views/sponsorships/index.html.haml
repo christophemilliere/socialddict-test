@@ -1,0 +1,13 @@
+.ui.middle.aligned.center.aligned.grid
+  .column
+    %h1.ui.teal.image.header
+      .content
+        Parrainer un ami
+
+    = form_tag friend_sponsorships_path(user: current_user), class: 'ui large form' do
+      .ui.stacked.segment
+        .field
+          .ui.left.icon.input
+            %i.at.icon
+            = text_field_tag :email, '', placeholder: "Email du filleul"
+      = submit_tag "Parrainer", class: "ui button"

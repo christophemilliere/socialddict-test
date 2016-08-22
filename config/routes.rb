@@ -3,8 +3,13 @@ Rails.application.routes.draw do
 
   resources :admins, only: [:index] do
     collection do
+      get 'not_spoonsorschip'
       get 'listing_sponsorship'
+      get 'listing_more_sponsorship'
+      get 'search_sponsorship_init'
       post 'listings_result'
+      post 'more_sponsorship_result'
+      post 'search_sponsorship_result'
     end
   end
   resources :sponsorships, only: [:index] do

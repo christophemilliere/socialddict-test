@@ -9,7 +9,7 @@
 </head>
   <body>
 
-    <% if request.path_info == '/admins' || request.path_info == '/admins/listing_sponsorship' %>
+    <% if request.path_info == '/admins' || request.path_info == '/admins/listing_sponsorship' || request.path_info == '/admins/listing_more_sponsorship' || request.path_info == '/admins/search_sponsorship_init' || request.path_info == "/admins/not_spoonsorschip" %>
       <%= render 'layouts/header/header_admin' %>
     <% else %>
       <%= render 'layouts/header/header_user' %>

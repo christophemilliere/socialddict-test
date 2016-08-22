@@ -1,8 +1,9 @@
 .ui.menu
   .header.item SocialDdict
-  = link_to "Personnes qui n'ont pas de parrain", admins_path, class: "item"
+  = link_to "Personnes qui n'ont pas de parrain", not_spoonsorschip_admins_path, class: "item"
   = link_to "Lister les X utilisateurs ayant parrainé", listing_sponsorship_admins_path, class: "item"
-  = link_to "Trouver le parrain initial à l’origine de l’inscription d’un utilisateur", admins_path, class: "item"
+  = link_to "Trouver tous les users qui ont parrainé plus de x sponsorship", listing_more_sponsorship_admins_path, class: "item"
+  = link_to "Trouver le parrain initial à l’origine de l’inscription d’un utilisateur", search_sponsorship_init_admins_path, class: "item"
 - if notice
   %p.ui.info.message= notice
 - if alert

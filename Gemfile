@@ -17,6 +17,7 @@ gem 'haml', '~> 4.0', '>= 4.0.7'
 gem 'devise'
 gem 'figaro'
 
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -44,6 +45,14 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
   gem 'haml-rails', '~> 0.9.0'
+  gem 'binding_of_caller'
+  gem 'better_errors'
+
+  gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'spring'
+  gem 'listen', '~> 3.0.5'
+  gem 'spring-watcher-listen', '~> 2.0.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'

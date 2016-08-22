@@ -1,0 +1,6 @@
+.container
+
+  = form_tag search_sponsorship_result_admins_path, remote: true do
+    = select_tag("godchilds", options_from_collection_for_select(@godchilds, "sponsorship_id", "email"))
+    = submit_tag "Trouver"
+  .results

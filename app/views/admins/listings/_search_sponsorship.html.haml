@@ -1,0 +1,22 @@
+.container
+  %p= @user.fullname
+
+  %table.ui.single.line.table
+    %thead
+      %tr
+        %th Parrain
+        %th Filleul(s)
+    %tbody
+      %tr
+        %td
+          = @user.fullname
+        %td
+          - @godchilds.each_with_index do |g, index|
+            - if g.firstname && g.lastname
+              = g.fullname
+            - else
+              - index += 1
+              - if index % 2 == 0
+                = g.email
+              - else
+                = g.email+ " - "

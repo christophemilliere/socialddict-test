@@ -1,0 +1,6 @@
+.container
+  %p Trouver tous les utilisateurs qui ont parrainé plus de x utilisateurs
+  = form_tag more_sponsorship_result_admins_path, remote: true do
+    = text_field_tag :number, '', placeholder: "Ajouter le nombre"
+    = submit_tag "Trouver"
+  .results

@@ -9,24 +9,12 @@
 </head>
   <body>
 
+    <% if request.path_info == '/admins' || request.path_info == '/admins/listing_sponsorship' %>
+      <%= render 'layouts/header/header_admin' %>
+    <% else %>
+      <%= render 'layouts/header/header_user' %>
+    <%end %>
     <div class="ui container">
-      <div class="ui menu">
-        <div class="header item">SocialDdict</div>
-        <% if user_signed_in? %>
-          <%= link_to 'Editer le profil', edit_user_registration_path, class: "item" %>
-          <%= link_to 'Parrainer un ami',   sponsorships_path, class: "item" %>
-          <%= link_to 'Déconection', destroy_user_session_path, method: :delete, class: "right item" %>   
-        <% else %>
-          <%= link_to 'Connexion', new_user_session_path, class: "right item" %>
-        <% end %>
-      </div>
-      <% if notice %>
-        <p class="ui info message"><%= notice %></p>
-      <% end %>
-      <% if alert %>
-        <p class="ui error message"><%= alert %></p>
-      <% end %>
-
       <%= yield %>
     </div>
 

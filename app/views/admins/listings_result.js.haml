@@ -1,0 +1,4 @@
+- if params[:number].present?
+  $('.results').html("#{j render 'admins/listings/listings' }")
+- else
+  $('.results').html("#{j "Vous n'avez pas ajouter un chiffre pour votre recherche"}")

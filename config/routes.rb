@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   root 'pages#index'
 
+  resources :admins, only: [:index] do
+    collection do
+      get 'listing_sponsorship'
+      post 'listings_result'
+    end
+  end
   resources :sponsorships, only: [:index] do
     collection do
       post 'friend'

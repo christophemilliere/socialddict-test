@@ -12,7 +12,7 @@ class SponsorshipsController < ApplicationController
 
     if params[:email_sponsorship]
       pwd = Digest::MD5.hexdigest(params[:email_sponsorship])
-      user = User.new(email: params[:email_sponsorship], password: pwd, password_confirmation: pwd, sponsorship_id: params[:id])
+      user = User.new(email: params[:email_sponsorship], password: pwd, password_confirmation: pwd, sponsorship_id: params[:sponsorships_id])
       if user.save
         SponsorshipMailer.send_password(user, pwd).deliver_now
         redirect_to root_path(params[:sponsorship]), notice: "Vous allez recevoir un email avec votre mots de passe provisoire." and return

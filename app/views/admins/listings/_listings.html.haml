@@ -1,0 +1,14 @@
+%p= "Vous avez trouver  #{@result_listing.count} utilisateur qui on parrainés le plus de monde"
+
+%table.ui.single.line.table
+  %thead
+    %tr
+      %th Fullname
+      %th sponsorship total
+  %tbody
+    - @result_listing.each do |l|
+      %tr
+        %td
+          = l[:user]
+        %td
+          = l[:count]

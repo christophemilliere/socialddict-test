@@ -4,7 +4,7 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
   %body
     %h3
-      "Mr #{@user.fullname}"
+      "Mr #{@user.email}"
 
       %a.btn{href:add_godchild_sponsorships_url(email_sponsorship: "#{@email_sponsorship}", sponsorships_id: @user.id, sponsorships: true), style: "background-color: #e32636;border-color: #e32636;border-radius: 6px; color: rgb(255, 255, 255);cursor: pointer;display: block;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight: normal;line-height: 24px;padding: 6px;text-align: center;text-decoration: none;width: 200px;"}
         Viens je te Parraine

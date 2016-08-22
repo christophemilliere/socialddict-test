@@ -1,0 +1,8 @@
+.container
+  %p Lister les X utilisateurs ayant parrainé le plus grand nombre de personnes
+  = form_tag listings_result_admins_path, remote: true do
+    = text_field_tag :number, '', placeholder: "Ajouter le nombre"
+    = submit_tag "Listings"
+
+
+  .results

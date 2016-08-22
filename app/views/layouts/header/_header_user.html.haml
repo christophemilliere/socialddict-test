@@ -1,0 +1,12 @@
+.ui.menu
+  .header.item SocialDdict
+  - if user_signed_in?
+    = link_to 'Editer le profil', edit_user_registration_path, class: "item"
+    = link_to 'Parrainer un ami',   sponsorships_path, class: "item"
+    = link_to 'Déconection', destroy_user_session_path, method: :delete, class: "right item"
+  - else
+    = link_to 'Connexion', new_user_session_path, class: "right item"
+- if notice
+  %p.ui.info.message= notice
+- if alert
+  %p.ui.error.message= alert

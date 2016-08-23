@@ -27,7 +27,7 @@ class AdminsController < ApplicationController
     if params[:number].present?
       @result_more_sponsorship = SponsorshipService.new(User,params[:number]).users_more_sponsorship
     else
-      @error = " Vous n'avez pas ajouter un chiffire"
+      @error = " Vous n'avez pas ajouté un chiffire"
     end
   end
 
@@ -35,7 +35,7 @@ class AdminsController < ApplicationController
     if params[:number].present?
       @result_listing = SponsorshipService.new(User).listing_sponsorship(params[:number])
     else
-      @error = " Vous n'avez pas ajouter un chiffire"
+      @error = " Vous n'avez pas ajouté un chiffire"
     end
   end
 end

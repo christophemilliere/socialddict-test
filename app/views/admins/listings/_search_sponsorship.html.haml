@@ -1,6 +1,4 @@
 .container
-  %p= @user.fullname
-
   %table.ui.single.line.table
     %thead
       %tr
@@ -9,7 +7,10 @@
     %tbody
       %tr
         %td
-          = @user.fullname
+          - if @user.firstname && @user.lastname
+            = @user.fullname
+          - else
+            = @user.email
         %td
           - @godchilds.each_with_index do |g, index|
             - if g.firstname && g.lastname

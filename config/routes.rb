@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'pages#index'
-
+  delete 'pages/:id/delete'  => 'pages#destroy', as: :delete
   resources :admins, only: [:index] do
     collection do
       get 'not_spoonsorschip'

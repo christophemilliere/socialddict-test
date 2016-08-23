@@ -4,8 +4,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  scope :not_sponsorship, -> { where(sponsorship_id: nil) }
-
   def fullname
     "#{lastname.capitalize} #{firstname.capitalize}"
   end

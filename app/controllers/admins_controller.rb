@@ -1,10 +1,10 @@
 class AdminsController < ApplicationController
 
   def index
-    # @test = SponsorshipService.new(User).sponsorship_count
-    @test = SponsorshipService.new(User).listing_sponsorship(3)
   end
+
   def not_spoonsorschip
+    @not_sponsorship = SponsorshipService.new(User).not_sponsorship
   end
 
   def listing_sponsorship

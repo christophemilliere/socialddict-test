@@ -6,8 +6,9 @@ class SponsorshipService
     @number = _number
   end
 
-  def sponsorship_count
-    @user.not_sponsorship.count
+  def not_sponsorship
+    sponsorship_ids = @user.select(:sponsorship_id).distinct.where.not(sponsorship_id: nil).pluck(:sponsorship_id)
+    @user.where.not(id: sponsorship_ids)
   end
 
   def search_sponsorship
@@ -33,8 +34,23 @@ class SponsorshipService
     listings = []
     users.each do |k, v|
       user = @user.find_by(id: k)
-      listings << {user: user.fullname , count: v}
+      listings << { user: user.fullname, count: v }
     end
     listings
+  end
+
+  def reorganization_sponsorship
+    if sponsorship && all_godchilds_for_sponsorship
+      all_godchilds_for_sponsorship.each do |s|
+        s.update_attribute(:sponsorship_id, sponsorship.id)
+      end
+    end
+    @user.find_by(id: number).destroy
+  end
+
+  private
+  def sponsorship
+    u = @user.find_by(id: number)
+    @user.find_by(id: u.sponsorship_id)
   end
 end

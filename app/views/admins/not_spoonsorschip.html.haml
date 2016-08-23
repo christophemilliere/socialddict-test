@@ -1,0 +1,16 @@
+.container
+  - if @not_sponsorship
+    %table.ui.single.line.table
+      %thead
+        %tr
+          %th Les utilisateurs qui n’ont parrainé personne
+      %tbody
+        - @not_sponsorship.each do |ns|
+          %tr
+            %td
+              - if ns.firstname && ns.lastname
+                = ns.fullname
+              - else
+                = ns.email
+  - else
+    %p Aucune réponse

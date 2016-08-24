@@ -3,7 +3,7 @@ class AdminsController < ApplicationController
   def index
   end
 
-  def not_spoonsorschip
+  def not_sponsorschip
     @not_sponsorship = SponsorshipService.new(User).not_sponsorship
   end
 

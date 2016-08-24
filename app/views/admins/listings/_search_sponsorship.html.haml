@@ -12,12 +12,8 @@
           - else
             = @user.email
         %td
-          - @godchilds.each_with_index do |g, index|
+          - @godchilds.each do |g|
             - if g.firstname && g.lastname
               = g.fullname
             - else
-              - index += 1
-              - if index % 2 == 0
-                = g.email
-              - else
-                = g.email+ " - "
+              = g.email+ " "

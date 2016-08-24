@@ -1,9 +1,9 @@
-%p= "Vous avez trouvé  #{@result_listing.count} utilisateur(s) qui ont parrainés le plus de monde"
+%p.ui.info.message= "Vous avez trouvé  #{@result_listing.count} utilisateur(s) qui ont parrainés le plus de monde"
 
 %table.ui.single.line.table
   %thead
     %tr
-      %th Fullname
+      %th Fullname or Email
       %th sponsorship total
   %tbody
     - @result_listing.each do |l|

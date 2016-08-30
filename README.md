@@ -14,8 +14,8 @@ ajouter ceci :
 
 ```
 development:
-  username: "christophemilliere93@gmail.com"
-  pwd: "Fraise92"
+  username: key
+  pwd: key
 ```
 
 Ne pas oublier de changer le serveur smtp dans `/config/environments/development` si vous n'utilisez pas google.
